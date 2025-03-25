@@ -34,4 +34,24 @@ Contributions to this project are welcome! If you have any suggestions or find a
 
 * This project was inspired by Scrimba course
 
-## 🖼️ Screenshots
+## 📸 Screenshots
+
+See the Password Generator in action!
+
+### 1. Empty Form
+
+This is how the Password Generator looks when you first open it, ready for your specifications.
+
+![Empty Password Generator Form](images/img1.png)
+
+### 2. Password Generated
+
+Once you've set your desired length and character options, click "Generate Password" to see your new, strong password!
+
+![Password Generated](images/img2.png)
+
+### 3. Password Copied
+
+After generating a password, simply click on it to copy it to your clipboard. This alert confirms the successful copy.
+
+![Password Copied Alert](images/img3.png)
