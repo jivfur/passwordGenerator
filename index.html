@@ -10,6 +10,7 @@
     <div class="container">
         <h1>Password Generator</h1>
 
+        <form id="checkboxForm">
         <div class="options">
             <label for="passwordLength" class="option-label">Password Length (8-30):</label>
             <input type="number" id="passwordLength" min="8" max="30" value="12">
@@ -34,6 +35,7 @@
             <input type="checkbox" id="includeSymbols" checked>
             <label for="includeSymbols" class="option-label">Include Symbols</label>
         </div>
+    </form>
 
         <button id="generateBtn">Generate Password</button>
 
