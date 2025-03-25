@@ -1,0 +1,116 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.options {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.option-label {
+    margin-left: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 80px;
+    margin-left: auto;
+    color: #333;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: 2px solid #007bff; /* Clear focus indicator */
+    outline-offset: 2px;
+}
+
+.password-display {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #eee;
+}
+
+.password-display input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2em;
+    padding: 8px;
+    color: #333;
+}
+
+.password-display button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+
+.password-display button:hover {
+    background-color: #1e7e34;
+}
+
+.password-display button:focus {
+    outline: 2px solid #28a745; /* Clear focus indicator */
+    outline-offset: 2px;
+}
