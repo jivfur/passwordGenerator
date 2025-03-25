@@ -3,10 +3,12 @@ const numbers = "0123456789"
 const lowercase = "abcdefghijklmnopqrstuvwxyz";
 const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+// getRandom generates a random number greater or equal than a and lesser than b
 function getRandom(a, b) {
     return Math.floor(a + Math.random() * b)
 }
 
+// shuffleString shuffle the elements of a string
 function shuffleString(str) {
     const array = str.split('');
     for (let i = array.length - 1; i > 0; i--) {
@@ -16,6 +18,8 @@ function shuffleString(str) {
     return array.join('');
 }
 
+
+// Password is a class that represent the password to be generated with the characteristics 
 class Password {
     constructor(length, lowercase, uppercase, numbers, symbols) {
         this.length = length;
@@ -65,29 +69,38 @@ class Password {
 let generatePasswordEl = document.getElementById("generateBtn")
 let copyEl = document.getElementById("copyBtn")
 let passwordEl = document.getElementById("password")
+let lowercaseEl = document.getElementById("includeLowercase")
+let uppercaseEl = document.getElementById("includeUppercase")
+let numbersEl = document.getElementById("includeNumbers")
+let symbolsEl = document.getElementById("includeSymbols")
+
+
+
 
 generatePasswordEl.addEventListener("click", function () {
-    let lengthEl = document.getElementById("passwordLength")
-    let lowercaseEl = document.getElementById("includeLowercase")
-    let uppercaseEl = document.getElementById("includeUppercase")
-    let numbersEl = document.getElementById("includeNumbers")
-    let symbolsEl = document.getElementById("includeSymbols")
-
-    p = new Password(lengthEl.value, lowercaseEl.checked, uppercaseEl.checked, numbersEl.checked, symbolsEl.checked)
-    p.generate()
-    passwordEl.value = p.password
+    passwordEl.value = ""
+    if (lowercaseEl.checked === false && uppercaseEl.checked === false && numbersEl.checked === false && symbolsEl.checked === false) {
+        alert("At least one characteristic should be selected")
+    } else {
+        let lengthEl = document.getElementById("passwordLength")
+        p = new Password(lengthEl.value, lowercaseEl.checked, uppercaseEl.checked, numbersEl.checked, symbolsEl.checked)
+        p.generate()
+        passwordEl.value = p.password
+    }
 })
 
 copyEl.addEventListener("click", function () {
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(passwordEl.value)
-            .then(() => {
-                alert('Password copied to clipboard!'); // Optional: Provide feedback to the user
-            })
-            .catch(err => {
-                console.error('Failed to copy text: ', err);
-                alert('Failed to copy password.'); // Inform the user about the failure
-            });
+    if (passwordEl.value != '') {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(passwordEl.value)
+                .then(() => {
+                    alert('Password copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Failed to copy text: ', err);
+                    alert('Failed to copy password.');
+                });
+        }
     }
 })
 
